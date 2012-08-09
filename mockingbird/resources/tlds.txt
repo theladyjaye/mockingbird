@@ -1,0 +1,8 @@
+au
+biz
+co.uk
+com
+edu
+net
+org
+us
