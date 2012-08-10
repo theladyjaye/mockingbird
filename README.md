@@ -54,7 +54,7 @@ Mockingbird.spec(Contact, {"name": MockRealName(),
                           "meta": MockObject(ContactMeta)})
 
 Mockingbird.spec(ContactMeta, {"phone": MockPhone(),
-                               "email":MockEmail(),
+                               "email": MockEmail(),
                                "dob": MockDate(),
                                "age": MockInt(min=22, max=44)
                                "is_married": MockBoolean()})
