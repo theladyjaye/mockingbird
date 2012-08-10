@@ -16,7 +16,7 @@ requires = []
 setup(
     name='mockingbird',
     version='0.1',
-    description='Fake Data using mock',
+    description='Fake Data',
     long_description=readme,
     author='Adam Venturella',
     author_email='aventurella@gmail.com',
