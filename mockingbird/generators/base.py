@@ -1,4 +1,4 @@
 class MockingbirdGenerator(object):
     
     def __call__(self):
-        return None
+        return self.repo.action()
