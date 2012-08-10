@@ -10,17 +10,3 @@ class IntGenerator(object):
 
     def action(self):
         return next(self.generator)
-
-
-class BooleanGenerator(IntGenerator):
-
-    def __init__(self, value=None):
-        self.min = 0
-        self.max = 2
-        self.value = value
-
-    def action(self):
-        if self.value:
-            return self.value
-        else:
-            return bool(super(BooleanGenerator, self).action())

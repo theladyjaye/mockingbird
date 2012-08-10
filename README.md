@@ -12,6 +12,8 @@ x MockInt
 
 x MockBoolean
 
+x MockChoice
+
 MockObject
 
 MockList
