@@ -156,6 +156,10 @@ class MockingbirdSuite(unittest.TestCase):
         for contact in address_book.contacts:
             meta = contact.meta
 
+            from pprint import pprint
+            pprint(contact.__dict__)
+            pprint(contact.meta.__dict__)
+
             self.assertIsNotNone(contact)
             self.assertIsInstance(contact, Contact)
             self.assertIsNotNone(contact.name)
