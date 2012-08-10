@@ -2,7 +2,7 @@ import pkg_resources
 from random import randrange
 
 
-class LoremIpsumGenerator(object):
+class TextGenerator(object):
     _text = None
 
     def __init__(self, min=1, max=1):
@@ -12,15 +12,15 @@ class LoremIpsumGenerator(object):
 
     @property
     def text(self):
-        if not LoremIpsumGenerator._text:
+        if not TextGenerator._text:
             data = pkg_resources.resource_stream("mockingbird.resources",
                                                  "ipsum.txt")
-            LoremIpsumGenerator._text = []
+            TextGenerator._text = []
 
             for line in data:
-                LoremIpsumGenerator._text.append(line.strip())
+                TextGenerator._text.append(line.strip())
 
-        return LoremIpsumGenerator._text
+        return TextGenerator._text
 
     def words(self):
         count = self.max
@@ -29,15 +29,15 @@ class LoremIpsumGenerator(object):
         if self.is_range:
             count = randrange(self.min, self.max)
 
-        data = LoremIpsumGenerator._text[index].split(" ")
+        data = TextGenerator._text[index].split(" ")
 
         while len(data) < count:
             index = index + 1
             try:
-                more = LoremIpsumGenerator._text[index].split(" ")
+                more = TextGenerator._text[index].split(" ")
                 data.extend(more)
             except KeyError:
-                more = LoremIpsumGenerator._text[index].split(" ")
+                more = TextGenerator._text[index].split(" ")
                 data.extend(more)
 
         return ' '.join(data[0:count])
