@@ -24,6 +24,7 @@ MockList
 
 ? MockHash
 
+? MockPrice
 
 Syntax test:
 
