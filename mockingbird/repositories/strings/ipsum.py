@@ -13,11 +13,12 @@ class LoremIpsumGenerator(object):
     @property
     def text(self):
         if not LoremIpsumGenerator._text:
-            data = pkg_resources.resource_stream("mockingbird.resources", "ipsum.txt")
+            data = pkg_resources.resource_stream("mockingbird.resources",
+                                                 "ipsum.txt")
             LoremIpsumGenerator._text = []
-            
+
             for line in data:
-                LoremIpsumGenerator._text.append(line)
+                LoremIpsumGenerator._text.append(line.strip())
 
         return LoremIpsumGenerator._text
 
@@ -29,7 +30,7 @@ class LoremIpsumGenerator(object):
             count = randrange(self.min, self.max)
 
         data = LoremIpsumGenerator._text[index].split(" ")
-        
+
         while len(data) < count:
             index = index + 1
             try:

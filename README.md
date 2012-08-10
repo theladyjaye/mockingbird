@@ -1,7 +1,7 @@
 MockDate
 MockPhone
-MockEmail
-MockName
+x MockEmail
+x MockName
 x MockString
 x MockInt
 x MockBoolean
