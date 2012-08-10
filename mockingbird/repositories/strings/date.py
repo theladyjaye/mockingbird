@@ -6,8 +6,11 @@ from random import randrange
 
 class DateGenerator(object):
 
-    def __init__(self, min_month=1, max_month=12,
-                 min_year=2000, max_year=None,
+    def __init__(self,
+                 min_month=1,
+                 max_month=12,
+                 min_year=2000,
+                 max_year=None,
                  format="%m/%d/%Y"):
 
         max_month = 13 if max_month == 12 else max_month
