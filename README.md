@@ -6,7 +6,7 @@ x MockEmail
 
 x MockRealName
 
-x MockString
+x MockText
 
 x MockInt
 
