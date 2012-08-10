@@ -57,7 +57,7 @@ Mockingbird.spec(ContactMeta, {"phone": MockPhone(),
                                "email":MockEmail(),
                                "dob": MockDate(),
                                "age": MockInt(min=22, max=44)
-                               "is_married":MockBoolean()})
+                               "is_married": MockBoolean()})
 
 Mockingbird.spec(AddressBook, {"contacts": MockList(Contact, min=10, max=20)})
 
