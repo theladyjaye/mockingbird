@@ -18,6 +18,10 @@ MockList
 
 ? MockAddress
 
+? MockCity
+
+? MockState
+
 ? MockZip
 
 ? MockUsername
