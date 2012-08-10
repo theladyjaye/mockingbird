@@ -1,14 +1,20 @@
 import pkg_resources
 from random import randrange
+from itertools import repeat
+from itertools import imap
+from mockingbird.utils import safe_range
 
 
 class TextGenerator(object):
     _text = None
 
-    def __init__(self, min=1, max=1):
-        self.min = min
-        self.max = max
-        self.is_range = True if max - min > 1 else False
+    def __init__(self, min=1, max=1, count=None):
+        
+        if count:
+            self.count = repeat(count)
+        else:
+            min, max = safe_range(min, max)
+            self.count = imap(randrange, repeat(min), repeat(max))
 
     @property
     def text(self):
@@ -23,15 +29,13 @@ class TextGenerator(object):
         return TextGenerator._text
 
     def words(self):
-        count = self.max
+        # start with a random line from self.text
         index = randrange(0, len(self.text))
-
-        if self.is_range:
-            count = randrange(self.min, self.max)
-
+        num_words = next(self.count)
+        
         data = TextGenerator._text[index].split(" ")
 
-        while len(data) < count:
+        while len(data) < num_words:
             index = index + 1
             try:
                 more = TextGenerator._text[index].split(" ")
@@ -40,8 +44,8 @@ class TextGenerator(object):
                 more = TextGenerator._text[index].split(" ")
                 data.extend(more)
 
-        return ' '.join(data[0:count])
+        return ' '.join(data[0:num_words])
 
-    def action(self):
+    def action(self, context):
         return self.words()
 

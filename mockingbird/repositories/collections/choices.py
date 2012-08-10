@@ -8,7 +8,7 @@ class ChoiceGenerator(object):
         self.range = imap(randrange, repeat(0), repeat(len(choices)))
         self.choices = choices
 
-    def action(self):
+    def action(self, context):
         return self.choices[next(self.range)]
 
 class BooleanGenerator(ChoiceGenerator):

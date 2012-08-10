@@ -17,5 +17,5 @@ class MockObject(MockingbirdGenerator):
         self.repo = repo(cls)
 
 class MockObjectList(MockingbirdGenerator):
-    def __init__(self, cls, min=0, max=1, repo=ObjectListGenerator):
-        self.repo = repo(cls, min=min, max=max)
+    def __init__(self, cls, min=1, max=1, count=None, repo=ObjectListGenerator):
+        self.repo = repo(cls, min=min, max=max, count=count)

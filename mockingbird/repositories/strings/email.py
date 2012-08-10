@@ -31,9 +31,9 @@ class EmailGenerator(object):
 
         return EmailGenerator._tlds
 
-    def action(self):
+    def action(self, context):
         names = NameGenerator()
-        first, last = names.action().split(" ")
+        first, last = names.action(context).split(" ")
 
         words = self.words
         tlds = self.tlds

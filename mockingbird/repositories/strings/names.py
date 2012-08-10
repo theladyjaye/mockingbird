@@ -17,7 +17,7 @@ class NameGenerator(object):
 
         return NameGenerator._names
 
-    def action(self):
+    def action(self, context):
         names = self.names
         name_index = randrange(0, len(names))
         return names[name_index]
