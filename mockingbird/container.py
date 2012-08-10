@@ -1,3 +1,5 @@
+from .exceptions import MissingSpec
+
 class MockBuilder(object):
     
     def __init__(self, cls, attrs):
@@ -12,6 +14,7 @@ class MockBuilder(object):
         return obj
 
 class Mockingbird(dict):
+    # descriptor to get current for instance?
 
     def spec(self, cls, attrs):
         key = cls.__name__.lower()
@@ -21,10 +24,10 @@ class Mockingbird(dict):
         try:
             return dict.__getitem__(self, key.lower())
         except KeyError:
-            raise KeyError(key)
+            raise MissingSpec(key)
 
     def __getattr__(self, key):
         try:
              return dict.__getitem__(self, key.lower())
         except KeyError:
-            raise AttributeError(key)
+            raise MissingSpec(key)
