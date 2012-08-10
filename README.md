@@ -35,6 +35,8 @@ x MockList
 Syntax test:
 
 ```python
+from mockingbird import Mockingbird
+
 class Contact(object):
     def __init__(self):
         self.name = None
@@ -56,18 +58,19 @@ class AddressBook(object):
         self.contacts = []
 
 
-Mockingbird.spec(Contact, {"name": MockRealName(),
+mockingbird = Mockingbird()
+mockingbird.spec(Contact, {"name": MockRealName(),
                           "label": MockString(min=4, max=10),
                           "meta": MockObject(ContactMeta)})
 
-Mockingbird.spec(ContactMeta, {"phone": MockPhone(),
+mockingbird.spec(ContactMeta, {"phone": MockPhone(),
                                "email": MockEmail(),
                                "dob": MockDate(),
                                "age": MockInt(min=22, max=44)
                                "is_married": MockBoolean()})
 
-Mockingbird.spec(AddressBook, {"contacts": MockList(Contact, min=10, max=20)})
+mockingbird.spec(AddressBook, {"contacts": MockList(Contact, min=10, max=20)})
 
-contact = Mockingbird.Contact()
-book = Mockingbird.AddressBook()
+contact = mockingbird.Contact()
+book = mockingbird.AddressBook()
 ```

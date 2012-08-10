@@ -15,6 +15,7 @@ from mockingbird.generators import MockObjectList
 from models import Contact
 from models import ContactMeta
 from models import AddressBook
+from models import Message
 
 class MockingbirdSuite(unittest.TestCase):
 
@@ -83,6 +84,13 @@ class MockingbirdSuite(unittest.TestCase):
         self.assertTrue(len(meta.dob) > 1)
         self.assertTrue(meta.age >= 22 and meta.age <= 44)
         self.assertTrue(type(meta.is_married) == bool)
+
+    # def test_choice(self):
+    #     mockingbird = self.mockingbird
+
+    #     mockingbird.spec(Message,     {"service": MockChoice(['twitter', 'facebook']),
+    #                                    "text": MockString(min=4, max=10)})
+
 
     def test_list_count(self):
         mockingbird = self.mockingbird

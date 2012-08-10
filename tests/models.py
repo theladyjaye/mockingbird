@@ -1,3 +1,8 @@
+class Message(object):
+    def __init__(self):
+        self.service = None
+        self.text = None   
+
 class Contact(object):
     def __init__(self):
         self.name = None
@@ -12,7 +17,6 @@ class ContactMeta(object):
         self.dob = None,
         self.age = 0
         self.is_married = False
-
 
 class AddressBook(object):
     def __init__(self):
