@@ -1,5 +1,7 @@
 # Mockingbird
 
+** Your models, mock data **
+
 Mockingbird creates mock data for your models. It keeps your front-end
 devs happy, they can work with the output and not need to talk to a database.
 
@@ -46,11 +48,11 @@ controller, but define all of the services for your app in say...
 
 [http://github.com/aventurella/pydi](http://github.com/aventurella/pydi)
 
-Then you can control all of your service dependencies from one location,
-but I digress. With the flip of some text all of your services could deliver
-mock data or real data.
+Then you can control all of your service dependencies from one location!
+With the flip of some text all of your services could deliver
+mock data or real data and your front end devs never need know the difference!
 
-**Mockingbird! Your models, mock data!  Shaaaaaaaaaaa!**
+**Mockingbird! Your models, mock data  Shaaaaaaaaaaa!**
 
 ## Setup
 
