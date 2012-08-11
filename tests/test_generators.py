@@ -58,7 +58,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
 
     def test_int(self):
         data = MockInt(min=20, max=30)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIsNotNone(result)
@@ -66,7 +66,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
 
     def test_int_value(self):
         data = MockInt(value=5)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIsNotNone(result)
@@ -74,14 +74,14 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
 
     def test_boolean(self):
         data = MockBoolean()
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIsInstance(result, bool)
 
     def test_boolean_true(self):
         data = MockBoolean(value=True)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIsInstance(result, bool)
@@ -89,7 +89,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
 
     def test_boolean_false(self):
         data = MockBoolean(value=False)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIsInstance(result, bool)
@@ -98,7 +98,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
     def test_choice(self):
         choices = ["lucy", "ollie", "clark"]
         data = MockChoice(choices)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIn(result, choices)
@@ -106,7 +106,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
     def test_choice_boolean(self):
         choices = [True, False]
         data = MockChoice(choices)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIn(result, choices)
@@ -114,7 +114,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
     def test_choice_single(self):
         choices = ["lucy"]
         data = MockChoice(choices)
-        
+
         for i in range(20):
             result = data(self.mockingbird)
             self.assertEqual(result, "lucy")
@@ -141,7 +141,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
         result = data(mockingbird)
 
         self.assertEqual(len(result), 2)
-        
+
         for item in result:
             self.assertIsInstance(item, Contact)
             self.assertIsNotNone(item.name)

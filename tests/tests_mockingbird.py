@@ -17,6 +17,7 @@ from models import ContactMeta
 from models import AddressBook
 from models import Message
 
+
 class MockingbirdSuite(unittest.TestCase):
 
     def setUp(self):
@@ -33,7 +34,6 @@ class MockingbirdSuite(unittest.TestCase):
         mockingbird.spec(Contact, {})
         data = mockingbird.Contact()
         self.assertIsInstance(data, Contact)
-            
 
     def test_realname_string(self):
         mockingbird = self.mockingbird
@@ -62,7 +62,6 @@ class MockingbirdSuite(unittest.TestCase):
 
         contact = mockingbird.Contact()
         meta = contact.meta
-        
 
         self.assertIsNotNone(contact)
         self.assertIsInstance(contact, Contact)
@@ -91,7 +90,6 @@ class MockingbirdSuite(unittest.TestCase):
     #     mockingbird.spec(Message,     {"service": MockChoice(['twitter', 'facebook']),
     #                                    "text": MockString(min=4, max=10)})
 
-
     def test_list_count(self):
         mockingbird = self.mockingbird
 
@@ -108,11 +106,10 @@ class MockingbirdSuite(unittest.TestCase):
         mockingbird.spec(AddressBook, {"contacts": MockObjectList(Contact, count=5)})
 
         address_book = mockingbird.AddressBook()
-        
-        
+
         self.assertIsNotNone(address_book)
         self.assertIsInstance(address_book, AddressBook)
-        self.assertEquals(len(address_book.contacts), 5)
+        self.assertEqual(len(address_book.contacts), 5)
 
         for contact in address_book.contacts:
             meta = contact.meta
@@ -155,10 +152,10 @@ class MockingbirdSuite(unittest.TestCase):
 
         address_book = mockingbird.AddressBook()
         total_contacts = len(address_book.contacts)
-        
+
         self.assertIsNotNone(address_book)
         self.assertIsInstance(address_book, AddressBook)
-        
+
         self.assertTrue(total_contacts >= 5 and total_contacts <= 10)
 
         for contact in address_book.contacts:

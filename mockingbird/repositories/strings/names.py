@@ -8,12 +8,12 @@ class NameGenerator(object):
     @property
     def names(self):
         if not NameGenerator._names:
-            data = pkg_resources.resource_stream("mockingbird.resources",
-                                                 "names.txt")
             NameGenerator._names = []
 
-            for line in data:
-                NameGenerator._names.append(line.strip())
+            with pkg_resources.resource_stream("mockingbird.resources",
+                                                 "names.txt") as data:
+                for line in data:
+                    NameGenerator._names.append(line.strip())
 
         return NameGenerator._names
 

@@ -10,30 +10,30 @@ class EmailGenerator(object):
     @property
     def words(self):
         if not EmailGenerator._words:
-            data = pkg_resources.resource_stream("mockingbird.resources",
-                                                 "words.txt")
             EmailGenerator._words = []
 
-            for line in data:
-                EmailGenerator._words.append(line.strip())
+            with pkg_resources.resource_stream("mockingbird.resources",
+                                                 "words.txt") as data:
+                for line in data:
+                    EmailGenerator._words.append(line.strip())
 
         return EmailGenerator._words
 
     @property
     def tlds(self):
         if not EmailGenerator._tlds:
-            data = pkg_resources.resource_stream("mockingbird.resources",
-                                                 "tlds.txt")
             EmailGenerator._tlds = []
 
-            for line in data:
-                EmailGenerator._tlds.append(line.strip())
+            with pkg_resources.resource_stream("mockingbird.resources",
+                                                 "tlds.txt") as data:
+                for line in data:
+                    EmailGenerator._tlds.append(line.strip())
 
         return EmailGenerator._tlds
 
     def action(self, context):
         names = NameGenerator()
-        first, last = names.action(context).split(" ")
+        first, last = names.action(context).split()
 
         words = self.words
         tlds = self.tlds

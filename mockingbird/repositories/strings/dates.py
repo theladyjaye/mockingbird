@@ -1,6 +1,6 @@
 from datetime import datetime
 from itertools import repeat
-from itertools import imap
+from mockingbird.compat import map
 from random import randrange
 
 
@@ -23,9 +23,9 @@ class DateGenerator(object):
         max_year = max(min_year, max_year)
 
         self.format = format
-        self.months = imap(randrange, repeat(min_month), repeat(max_month))
-        self.years = imap(randrange, repeat(min_year), repeat(max_year))
-        self.days = imap(randrange, repeat(1), repeat(32))
+        self.months = map(randrange, repeat(min_month), repeat(max_month))
+        self.years = map(randrange, repeat(min_year), repeat(max_year))
+        self.days = map(randrange, repeat(1), repeat(32))
 
     def action(self, context):
         while 1:

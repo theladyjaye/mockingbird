@@ -1,1 +1,0 @@
-from .ipsum import LoremIpsumGenerator

@@ -1,15 +1,17 @@
 from itertools import repeat
-from itertools import imap
 from random import randrange
+from mockingbird.compat import map
+
 
 class ChoiceGenerator(object):
 
     def __init__(self, choices):
-        self.range = imap(randrange, repeat(0), repeat(len(choices)))
+        self.range = map(randrange, repeat(0), repeat(len(choices)))
         self.choices = choices
 
     def action(self, context):
         return self.choices[next(self.range)]
+
 
 class BooleanGenerator(ChoiceGenerator):
 
@@ -18,6 +20,6 @@ class BooleanGenerator(ChoiceGenerator):
         if type(value) is bool:
             self.choices = [value]
         else:
-            self.choices = [True, False] 
-        
-        self.range = imap(randrange, repeat(0), repeat(len(self.choices)))
+            self.choices = [True, False]
+
+        self.range = map(randrange, repeat(0), repeat(len(self.choices)))
