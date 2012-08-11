@@ -1,6 +1,6 @@
 # Mockingbird
 
-** Your models, mock data **
+**Your models, mock data**
 
 Mockingbird creates mock data for your models. It keeps your front-end
 devs happy, they can work with the output and not need to talk to a database.
