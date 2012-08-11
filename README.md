@@ -3,7 +3,7 @@
 Mockingbird creates mock data for your models. It keeps your front-end
 devs happy, they can work with the output and not need to talk to a database.
 
-It is not related to [http://pypi.python.org/pypi/mock/](http://pypi.python.org/pypi/mock/)
+It is **not** related to [http://pypi.python.org/pypi/mock/](http://pypi.python.org/pypi/mock/)
 
 If you are setting up your application like this, it can be a very powerful
 tool to keep your front end dev marking-it-up&trade; and stylin-it-up&trade;
