@@ -23,7 +23,6 @@ class SqlContactRepository(object):
         pass
 
 class MockContactRepository(object)
-
     def get_contact(self):
         return mockingbird.Contact()
 
@@ -37,7 +36,6 @@ class ContactService(object):
 
 
 class MyController(MyControllerBase):
-
     def some_action(self):
         service = ContactService(MockContacts)
         contacts = service.get_contact()
