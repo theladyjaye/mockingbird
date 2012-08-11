@@ -16,7 +16,7 @@ requires = []
 setup(
     name='mockingbird',
     version='0.1',
-    description='Fake Data',
+    description='Your models, fake data',
     long_description=readme,
     author='Adam Venturella',
     author_email='aventurella@gmail.com',
@@ -32,14 +32,11 @@ setup(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Natural Language :: English',
-        'License :: OSI Approved :: Apache Software License',
+        'Topic :: Internet :: WWW/HTTP',
+        'License :: OSI Approved :: ISC License (ISCL)',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.0',
-        'Programming Language :: Python :: 3.1',
-        'Programming Language :: Python :: 3.2',
     ),
 
 )
