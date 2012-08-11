@@ -14,9 +14,9 @@ class SqlContactRepository(object):
     def get_contact(self):
         """
         this method is not done yet, but it would be really great
-        to the my front end developers start working and not wait on me
-        so I will use the MockContactRepository for the time being
-        while I work here. Maybe fetch Django Models or some other
+        for the my front end developers start working and not wait on me.
+        I will use the MockContactRepository for the time being
+        while I work here. Maybe I will fetch Django Models or some other
         custom work... Who knows! While I figure it out though no need
         to make my front end wait!
         """
