@@ -38,6 +38,13 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
             self.assertIsNotNone(result)
             self.assertTrue(len(result) == 10)
 
+    def test_string_value(self):
+        data = MockString(value="lucy")
+        for i in range(20):
+            result = data(self.mockingbird)
+            self.assertIsNotNone(result)
+            self.assertEquals(result, 'lucy')
+
     def test_phone(self):
         data = MockPhoneNumber()
         result = data(self.mockingbird)

@@ -6,8 +6,8 @@ from mockingbird.repositories.strings.phone import PhoneNumberGenerator
 from mockingbird.repositories.strings.dates import DateGenerator
 
 class MockString(MockingbirdGenerator):
-    def __init__(self, min=1, max=1, count=None, repo=TextGenerator):
-        self.repo = repo(min, max, count)
+    def __init__(self, min=1, max=1, count=None, value=None, repo=TextGenerator):
+        self.repo = repo(min=min, max=max, count=count, value=value)
 
 class MockRealName(MockingbirdGenerator):
     def __init__(self, repo=NameGenerator):
