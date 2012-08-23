@@ -2,6 +2,8 @@
 
 **Your models, mock data**
 
+[![Build Status](https://secure.travis-ci.org/aventurella/mockingbird.png?branch=master)](http://travis-ci.org/aventurella/mockingbird)
+
 Mockingbird creates mock data for your models. It keeps your front-end
 devs happy, they can work with the output and not need to talk to a database.
 
