@@ -1,5 +1,7 @@
+import sys, os
+sys.path.insert(0, os.path.abspath('..'))
+
 import unittest
-import context
 from mockingbird import Mockingbird
 from mockingbird.exceptions import MissingSpec
 
