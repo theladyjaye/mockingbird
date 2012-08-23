@@ -28,3 +28,7 @@ class MockingbirdExceptionsSuite(unittest.TestCase):
 
         with self.assertRaises(KeyError):
             mockingbird["Phantom"]
+
+
+if __name__ == '__main__':
+    unittest.main()

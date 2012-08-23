@@ -183,3 +183,6 @@ class MockingbirdSuite(unittest.TestCase):
             self.assertTrue(len(meta.dob) > 1)
             self.assertTrue(meta.age >= 22 and meta.age <= 44)
             self.assertTrue(type(meta.is_married) == bool)
+
+if __name__ == '__main__':
+    unittest.main()

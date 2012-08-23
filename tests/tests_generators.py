@@ -174,3 +174,6 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
             self.assertIsNotNone(item.label)
             self.assertTrue(len(item.name) > 1)
             self.assertTrue(len(item.label) > 1)
+
+if __name__ == '__main__':
+    unittest.main()
