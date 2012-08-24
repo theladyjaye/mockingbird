@@ -14,21 +14,14 @@ class MockingbirdExceptionsSuite(unittest.TestCase):
     def test_missing_spec_attr(self):
         mockingbird = self.mockingbird
 
-        with self.assertRaises(MissingSpec):
-            mockingbird.Phantom()
-
-        with self.assertRaises(AttributeError):
-            mockingbird.Phantom()
+        self.assertRaises(MissingSpec, getattr, mockingbird, 'Phantom')
+        self.assertRaises(AttributeError, getattr, mockingbird, 'Phantom')
 
     def test_missing_spec_key(self):
         mockingbird = self.mockingbird
 
-        with self.assertRaises(MissingSpec):
-            mockingbird["Phantom"]
-
-        with self.assertRaises(KeyError):
-            mockingbird["Phantom"]
-
+        self.assertRaises(MissingSpec, mockingbird.get('Phantom'))
+        self.assertRaises(KeyError, mockingbird.get('Phantom'))
 
 if __name__ == '__main__':
     unittest.main()

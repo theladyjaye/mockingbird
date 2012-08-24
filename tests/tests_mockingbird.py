@@ -20,7 +20,7 @@ from .models import AddressBook
 from .models import Message
 
 
-class MockingbirdCoreSuite(unittest.TestCase):
+class MockingbirdSuite(unittest.TestCase):
 
     def setUp(self):
         self.mockingbird = Mockingbird()
@@ -73,7 +73,7 @@ class MockingbirdCoreSuite(unittest.TestCase):
         self.assertTrue(len(contact.label) > 1)
 
         self.assertFalse(meta == None)
-        self.assertIsInstance(meta, ContactMeta)
+        self.assertTrue(isinstance(meta, ContactMeta))
         self.assertFalse(meta.phone == None)
         self.assertFalse(meta.email == None)
         self.assertFalse(meta.dob == None)

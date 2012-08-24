@@ -25,7 +25,7 @@ class GeneratorsSuite(unittest.TestCase):
         data = MockRealName()
         result = data(self.mockingbird)
         self.assertFalse(result == None)
-        self.assertGreater(len(result), 1)
+        self.assertTrue(len(result) > 1)
 
     def test_string(self):
         data = MockString(min=4, max=10)
@@ -51,7 +51,7 @@ class GeneratorsSuite(unittest.TestCase):
         data = MockPhoneNumber()
         result = data(self.mockingbird)
         self.assertFalse(result == None)
-        self.assertGreater(len(result), 1)
+        self.assertTrue(len(result) > 1)
 
     def test_email(self):
         data = MockEmail()
