@@ -20,8 +20,8 @@ class MockingbirdExceptionsSuite(unittest.TestCase):
     def test_missing_spec_key(self):
         mockingbird = self.mockingbird
 
-        self.assertRaises(MissingSpec, mockingbird.get('Phantom'))
-        self.assertRaises(KeyError, mockingbird.get('Phantom'))
+        self.assertRaises(MissingSpec, mockingbird.__getitem__, 'Phantom')
+        self.assertRaises(KeyError, mockingbird.__getitem__, 'Phantom')
 
 if __name__ == '__main__':
     unittest.main()
