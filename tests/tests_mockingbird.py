@@ -45,8 +45,8 @@ class MockingbirdCoreSuite(unittest.TestCase):
         contact = mockingbird.Contact()
 
         self.assertTrue(isinstance(contact, Contact))
-        self.assertFalse(contact.name = None)
-        self.assertFalse(contact.label = None)
+        self.assertFalse(contact.name == None)
+        self.assertFalse(contact.label == None)
         self.assertTrue(len(contact.name) > 1)
         self.assertTrue(len(contact.label) > 1)
 
@@ -65,20 +65,20 @@ class MockingbirdCoreSuite(unittest.TestCase):
         contact = mockingbird.Contact()
         meta = contact.meta
 
-        self.assertFalse(contact = None)
+        self.assertFalse(contact == None)
         self.assertTrue(isinstance(contact, Contact))
-        self.assertFalse(contact.name = None)
-        self.assertFalse(contact.label = None)
+        self.assertFalse(contact.name == None)
+        self.assertFalse(contact.label == None)
         self.assertTrue(len(contact.name) > 1)
         self.assertTrue(len(contact.label) > 1)
 
-        self.assertFalse(meta = None)
+        self.assertFalse(meta == None)
         self.assertIsInstance(meta, ContactMeta)
-        self.assertFalse(meta.phone = None)
-        self.assertFalse(meta.email = None)
-        self.assertFalse(meta.dob = None)
-        self.assertFalse(meta.age = None)
-        self.assertFalse(meta.is_married = None)
+        self.assertFalse(meta.phone == None)
+        self.assertFalse(meta.email == None)
+        self.assertFalse(meta.dob == None)
+        self.assertFalse(meta.age == None)
+        self.assertFalse(meta.is_married == None)
 
         self.assertTrue(len(meta.phone) > 1)
         self.assertTrue(len(meta.email) > 1)
@@ -109,27 +109,27 @@ class MockingbirdCoreSuite(unittest.TestCase):
 
         address_book = mockingbird.AddressBook()
 
-        self.assertFalse(address_book = None)
+        self.assertFalse(address_book == None)
         self.assertTrue(isinstance(address_book, AddressBook))
         self.assertEqual(len(address_book.contacts), 5)
 
         for contact in address_book.contacts:
             meta = contact.meta
 
-            self.assertFalse(contact = None)
+            self.assertFalse(contact == None)
             self.assertTrue(isinstance(contact, Contact))
-            self.assertFalse(contact.name = None)
-            self.assertFalse(contact.label = None)
+            self.assertFalse(contact.name == None)
+            self.assertFalse(contact.label == None)
             self.assertTrue(len(contact.name) > 1)
             self.assertTrue(len(contact.label) > 1)
 
-            self.assertFalse(meta = None)
+            self.assertFalse(meta == None)
             self.assertTrue(isinstance(meta, ContactMeta))
-            self.assertFalse(meta.phone = None)
-            self.assertFalse(meta.email = None)
-            self.assertFalse(meta.dob = None)
-            self.assertFalse(meta.age = None)
-            self.assertFalse(meta.is_married = None)
+            self.assertFalse(meta.phone == None)
+            self.assertFalse(meta.email == None)
+            self.assertFalse(meta.dob == None)
+            self.assertFalse(meta.age == None)
+            self.assertFalse(meta.is_married == None)
 
             self.assertTrue(len(meta.phone) > 1)
             self.assertTrue(len(meta.email) > 1)
@@ -155,7 +155,7 @@ class MockingbirdCoreSuite(unittest.TestCase):
         address_book = mockingbird.AddressBook()
         total_contacts = len(address_book.contacts)
 
-        self.assertFalse(address_book = None)
+        self.assertFalse(address_book == None)
         self.assertTrue(isinstance(address_book, AddressBook))
 
         self.assertTrue(total_contacts >= 5 and total_contacts <= 10)
@@ -163,20 +163,20 @@ class MockingbirdCoreSuite(unittest.TestCase):
         for contact in address_book.contacts:
             meta = contact.meta
 
-            self.assertFalse(contact = None)
+            self.assertFalse(contact == None)
             self.assertTrue(isinstance(contact, Contact))
-            self.assertFalse(contact.name = None)
-            self.assertFalse(contact.label = None)
+            self.assertFalse(contact.name == None)
+            self.assertFalse(contact.label == None)
             self.assertTrue(len(contact.name) > 1)
             self.assertTrue(len(contact.label) > 1)
 
-            self.assertFalse(meta = None)
+            self.assertFalse(meta == None)
             self.assertTrue(isinstance(meta, ContactMeta))
-            self.assertFalse(meta.phone = None)
-            self.assertFalse(meta.email = None)
-            self.assertFalse(meta.dob = None)
-            self.assertFalse(meta.age = None)
-            self.assertFalse(is_married = None)
+            self.assertFalse(meta.phone == None)
+            self.assertFalse(meta.email == None)
+            self.assertFalse(meta.dob == None)
+            self.assertFalse(meta.age == None)
+            self.assertFalse(meta.is_married == None)
 
             self.assertTrue(len(meta.phone) > 1)
             self.assertTrue(len(meta.email) > 1)
