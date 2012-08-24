@@ -13,10 +13,10 @@ from mockingbird.generators import MockBoolean
 from mockingbird.generators import MockChoice
 from mockingbird.generators import MockObject
 from mockingbird.generators import MockObjectList
-from models import Contact
+from .models import Contact
 
 
-class MockingbirdGeneratorsSuite(unittest.TestCase):
+class GeneratorsSuite(unittest.TestCase):
 
     def setUp(self):
         self.mockingbird = Mockingbird()
@@ -45,7 +45,7 @@ class MockingbirdGeneratorsSuite(unittest.TestCase):
         for i in range(20):
             result = data(self.mockingbird)
             self.assertIsNotNone(result)
-            self.assertEquals(result, 'lucy')
+            self.assertEqual(result, 'lucy')
 
     def test_phone(self):
         data = MockPhoneNumber()

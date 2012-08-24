@@ -14,13 +14,13 @@ from mockingbird.generators import MockChoice
 from mockingbird.generators import MockObject
 from mockingbird.generators import MockObjectList
 
-from models import Contact
-from models import ContactMeta
-from models import AddressBook
-from models import Message
+from .models import Contact
+from .models import ContactMeta
+from .models import AddressBook
+from .models import Message
 
 
-class MockingbirdSuite(unittest.TestCase):
+class MockingbirdCoreSuite(unittest.TestCase):
 
     def setUp(self):
         self.mockingbird = Mockingbird()
