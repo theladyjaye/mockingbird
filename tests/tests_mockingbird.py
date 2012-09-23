@@ -4,6 +4,9 @@ sys.path.insert(0, os.path.abspath('..'))
 import unittest
 from mockingbird import Mockingbird
 from mockingbird.generators import MockRealName
+from mockingbird.generators import MockFirstName
+from mockingbird.generators import MockLastName
+from mockingbird.generators import MockUserName
 from mockingbird.generators import MockString
 from mockingbird.generators import MockPhoneNumber
 from mockingbird.generators import MockEmail
@@ -18,6 +21,7 @@ from .models import Contact
 from .models import ContactMeta
 from .models import AddressBook
 from .models import Message
+from .models import Account
 
 
 class MockingbirdSuite(unittest.TestCase):
@@ -36,6 +40,22 @@ class MockingbirdSuite(unittest.TestCase):
         mockingbird.spec(Contact, {})
         data = mockingbird.Contact()
         self.assertTrue(isinstance(data, Contact))
+
+    def test_names_strings(self):
+        mockingbird = self.mockingbird
+        mockingbird.spec(Account, {"first_name": MockFirstName(),
+                                   "last_name": MockLastName(),
+                                   "username": MockUserName()})
+
+        account = mockingbird.Account()
+
+        self.assertTrue(isinstance(account, Account))
+        self.assertFalse(account.first_name == None)
+        self.assertFalse(account.last_name == None)
+        self.assertFalse(account.username == None)
+        self.assertTrue(len(account.first_name) > 1)
+        self.assertTrue(len(account.last_name) > 1)
+        self.assertTrue(len(account.username) > 1)
 
     def test_realname_string(self):
         mockingbird = self.mockingbird

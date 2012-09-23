@@ -4,6 +4,10 @@ sys.path.insert(0, os.path.abspath('..'))
 import unittest
 from mockingbird import Mockingbird
 from mockingbird.generators import MockRealName
+from mockingbird.generators import MockUserName
+from mockingbird.generators import MockFirstName
+from mockingbird.generators import MockLastName
+
 from mockingbird.generators import MockString
 from mockingbird.generators import MockPhoneNumber
 from mockingbird.generators import MockEmail
@@ -20,6 +24,24 @@ class GeneratorsSuite(unittest.TestCase):
 
     def setUp(self):
         self.mockingbird = Mockingbird()
+
+    def test_firstname(self):
+        data = MockFirstName()
+        result = data(self.mockingbird)
+        self.assertFalse(result == None)
+        self.assertTrue(len(result) > 1)
+
+    def test_lastname(self):
+        data = MockLastName()
+        result = data(self.mockingbird)
+        self.assertFalse(result == None)
+        self.assertTrue(len(result) > 1)
+
+    def test_username(self):
+        data = MockUserName()
+        result = data(self.mockingbird)
+        self.assertFalse(result == None)
+        self.assertTrue(len(result) > 1)
 
     def test_realname(self):
         data = MockRealName()

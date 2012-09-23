@@ -1,7 +1,15 @@
+class Account(object):
+    def __init__(self):
+        self.first_name = None
+        self.last_name = None
+        self.username = None
+
+
 class Message(object):
     def __init__(self):
         self.service = None
-        self.text = None   
+        self.text = None
+
 
 class Contact(object):
     def __init__(self):
@@ -17,6 +25,7 @@ class ContactMeta(object):
         self.dob = None,
         self.age = 0
         self.is_married = False
+
 
 class AddressBook(object):
     def __init__(self):
