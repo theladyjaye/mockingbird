@@ -1,5 +1,11 @@
 #!/usr/bin/env python
+import os
+import sys
 from setuptools import setup
+
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit()
 
 with open('README.md') as f:
     readme = f.read()
@@ -8,14 +14,19 @@ with open('LICENSE') as f:
     license = f.read()
 
 packages = [
-    'mockingbird'
+    'mockingbird',
+    'mockingbird.generators',
+    'mockingbird.repositories',
+    'mockingbird.repositories.collections',
+    'mockingbird.repositories.numbers',
+    'mockingbird.repositories.strings',
 ]
 
 requires = []
 
 setup(
     name='mockingbird',
-    version='0.1',
+    version='0.1.4',
     description='Your models, fake data',
     long_description=readme,
     author='Adam Venturella',
@@ -24,7 +35,7 @@ setup(
     license=license,
     packages=packages,
     package_data={'': ['LICENSE'],
-                  'mockingbird.resources': ['*.txt']},
+                  'mockingbird': ['resources/*.txt']},
     include_package_data=True,
     install_requires=requires,
     package_dir={'mockingbird': 'mockingbird'},
